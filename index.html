@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Sathvik Setti's personal portfolio website.">
+  <title>Sathvik Setti | Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="border-bottom">
+    <nav class="container navbar navbar-expand-sm" aria-label="Main navigation">
+      <a class="navbar-brand" href="#top">Sathvik Setti</a>
+      <ul class="navbar-nav flex-row gap-3">
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="intro container">
+      <p class="label">Graduate Engineer · Bengaluru, India</p>
+      <h1>Hi, I am Sathvik.</h1>
+      <p class="intro-text">I like to build backend systems, data pipelines, and useful web applications. I completed my B.Tech in Computer Science at PES University. Currently a Graduate Engineer at Sage.</p>
+      <a class="btn btn-primary button" href="#projects">View my projects</a>
+    </section>
+
+    <section id="projects" class="container section-space">
+      <p class="label">Selected projects</p>
+      <h2>Things I have built</h2>
+
+      <div class="row g-3 mt-2">
+        <div class="col-md-6">
+          <article class="card project-card" tabindex="0">
+            <div class="card-body">
+              <p class="project-number">01</p>
+              <h3>AI investing assistant</h3>
+              <p class="summary">A UX overhaul for an AI investing product used in investor pitches.</p>
+              <div class="project-more">
+                <p>Designed the visual system, dark and light themes, landing screen, portfolio dashboard, and analytics cards during a six-day sprint.</p>
+                <p class="tech">Vite · TypeScript · CSS</p>
+              </div>
+              <button class="btn btn-outline-primary read-more" type="button" data-project-title="AI investing assistant" data-project-description="I led the UX layer of an early-stage fintech startup's AI investing assistant during a six-day full-time sprint. The block renderer, component gallery, and mock API already existed; I owned the visual design, theming, interactions, dashboard, responsive behaviour, and polish. I rebuilt the design tokens and chamfered-card visual system across about 90 card components, added dark and light themes, created an animated landing screen with 18 real starter prompts, and built a portfolio dashboard with a holdings treemap. I also added Monte Carlo return distribution and multi-level portfolio stress-test cards, then verified 89 of 89 user flows with Playwright." data-project-tech="React 19 · TypeScript · Tailwind CSS · Framer Motion · Recharts · Vite · Playwright">Read more</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6">
+          <article class="card project-card" tabindex="0">
+            <div class="card-body">
+              <p class="project-number">02</p>
+              <h3>Loop</h3>
+              <p class="summary">A project search and analytics platform with graph relationships.</p>
+              <div class="project-more">
+                <p>Uses PostgreSQL for structured data, Neo4j for relationships, and Llama 3.1 for project summaries. Lazy loading reduced initial load time by 60%.</p>
+                <p class="tech">Go · PostgreSQL · Neo4j · Next.js</p>
+              </div>
+              <button class="btn btn-outline-primary read-more" type="button" data-project-title="Loop" data-project-description="Loop is a microservices-based project search and analytics platform. PostgreSQL stores ACID-safe project data and narrative sections as JSONB, while Neo4j handles relationships between projects, technologies, and stakeholders. A shared project UUID connects both databases. I integrated Groq-hosted Llama 3.1 with exponential backoff, up to three retries, throttling, timeouts, and graceful degradation when summaries fail. Lazy-loading summaries reduced initial load time by 60 percent. The search layer supports exact, topic, and unified search, with a normalisation layer handling inconsistent graph result fields." data-project-tech="Go · PostgreSQL · JSONB · Neo4j · Cypher · Groq Llama 3.1 · Next.js">Read more</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6">
+          <article class="card project-card" tabindex="0">
+            <div class="card-body">
+              <p class="project-number">03</p>
+              <h3>Distributed task queue</h3>
+              <p class="summary">A task system that sends work to workers and tracks its state.</p>
+              <div class="project-more">
+                <p>Kafka distributes tasks between workers while Redis stores task states. The project also includes heartbeats, error handling, and an admin GUI.</p>
+                <p class="tech">Python · Kafka · Redis · Tkinter</p>
+              </div>
+              <button class="btn btn-outline-primary read-more" type="button" data-project-title="Distributed task queue" data-project-description="YADTQ is a distributed task queue modelled on systems such as Celery. Clients submit JSON tasks, Kafka consumer groups distribute work to multiple workers, and Redis atomically tracks each task from queued to processing to completed or failed. Workers have UUIDs and heartbeats for health monitoring, and failures are recorded in Redis. I added single-task, sequential interactive, and concurrent threaded bulk producer modes, plus a Tkinter GUI for launching workers, submitting tasks, and querying status. The worker uses a strategy-style operation map for arithmetic tasks." data-project-tech="Python · Kafka · Redis · Tkinter · Threading">Read more</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6">
+          <article class="card project-card" tabindex="0">
+            <div class="card-body">
+              <p class="project-number">04</p>
+              <h3>URL shortener</h3>
+              <p class="summary">A cloud-native URL shortener tested under load.</p>
+              <div class="project-more">
+                <p>Built with Flask and Redis, then deployed on Kubernetes with a Horizontal Pod Autoscaler and health endpoints.</p>
+                <p class="tech">Flask · Redis · Docker · Kubernetes</p>
+              </div>
+              <button class="btn btn-outline-primary read-more" type="button" data-project-title="URL shortener" data-project-description="This cloud-native service provides bit.ly-style URL shortening with Flask and Redis. I containerised it with Docker and deployed it on Kubernetes using ConfigMaps, Kubernetes service discovery, health probes, and a Horizontal Pod Autoscaler configured for two to ten replicas with a 50 percent CPU target. Redis stores two-way mappings and the service includes exponential-backoff reconnects plus an in-memory fallback. Apache Benchmark testing used 1,000 requests at 100 concurrent connections; the observed deployment scaled from two to six pods and later returned to baseline." data-project-tech="Flask · Redis · Docker · Kubernetes · Minikube · Apache Benchmark">Read more</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6">
+          <article class="card project-card" tabindex="0">
+            <div class="card-body">
+              <p class="project-number">05</p>
+              <h3>Bug tracker</h3>
+              <p class="summary">A role-based issue management system modelled on JIRA.</p>
+              <div class="project-more">
+                <p>Supports four user roles and the bug lifecycle from open to closed. Built with separate DAO and service layers to practise object-oriented design.</p>
+                <p class="tech">Java · Vaadin · MySQL · Maven</p>
+              </div>
+              <button class="btn btn-outline-primary read-more" type="button" data-project-title="Bug tracker" data-project-description="This JIRA-style issue management system has separate dashboards for Administrator, Project Manager, Developer, and Tester roles. It supports the full bug lifecycle from Open to Assigned to In Progress to Fixed to Verified to Closed. The application uses MVC with DAO and service layers, role-specific service interfaces, and a database connection manager. I applied Factory for role-aware user creation, Strategy for bug resolution, Singleton for connection management, and Template Method for standard, detailed, and summary reports." data-project-tech="Java · Vaadin · MySQL · Maven · Tomcat / Jetty">Read more</button>
+            </div>
+          </article>
+        </div>
+
+        <div class="col-md-6">
+          <article class="card project-card" tabindex="0">
+            <div class="card-body">
+              <p class="project-number">06</p>
+              <h3>Agentic web-scraping framework</h3>
+              <p class="summary">A framework that uses LLMs to generate browser automation for online print configurators.</p>
+              <div class="project-more">
+                <p>Captures a page, infers its options, generates scraping logic, and produces a CSV of configuration prices without a hand-written scraper for every site.</p>
+                <p class="tech">Python · Playwright · LangGraph · Gemini · OpenAI</p>
+              </div>
+              <button class="btn btn-outline-primary read-more" type="button" data-project-title="Agentic web-scraping framework" data-project-description="This Python framework extracts prices from German online print retailers by using LLMs to generate browser-automation code on the fly. It has two modes: deterministic mode replays known HTTP requests using JSON value maps without a browser or LLM, while walker mode uses generated Playwright code to discover new option combinations. The pipeline captures DOM, network traces, cookies, and form fields, then produces a CSV of every configuration and its price. I solved shadow-DOM cookie-consent handling with a recursive walker, inferred cryptic form fields from page JavaScript and request payloads, and prevented cartesian-product explosions with a pre-computed iteration plan. When a walker returned 94 identical prices, saved artifacts exposed three separate causes; I fixed them with regression tests. The framework has 140+ unittest tests, output validation, a multi-site validation gate, and support for Gemini and OpenAI." data-project-tech="Python · Playwright · LangGraph / LangChain · Google Gemini API · OpenAI API · unittest · Conda">Read more</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-note">
+        <div class="container">
+            <p>I'm only a fresher, more projects to come! (I Obviously have a lot more, they are not worthy of being showcased yet.)</p>
+        </div>
+    </section>
+
+
+
+    <section id="about" class="about section-space">
+      <div class="container">
+        <p class="label">About me</p>
+        <h2>Interested in how software works underneath.</h2>
+        <p class="about-text">My main interests are distributed systems, backend engineering, and high-performance data extraction. I work with Python, Go, TypeScript, React, PostgreSQL, Kafka, Redis, Docker, and Kubernetes. I also tend to be a sort of 'perfectionist' when it comes to user experience on websites, so I believe I have the knack for (or potential to) creating great user experiences.</p>
+        <p class="education"><strong>PES University</strong> · B.Tech in Computer Science · 2022 - 2026 · CGPA: 8.75</p>
+      </div>
+    </section>
+
+    <section id="contact" class="container contact section-space">
+      <p class="label">Contact</p>
+      <h2>Let's talk!</h2>
+      <a href="mailto:sathviksetti@gmail.com">sathviksetti@gmail.com</a>
+      <div class="links">
+        <a href="https://github.com/noobieeeeeee">GitHub</a>
+        <a href="https://linkedin.com/in/sathvik-setti-348aa7311">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="project-dialog" id="project-dialog">
+    <div class="dialog-content">
+      <button class="dialog-close" type="button" aria-label="Close project details">&times;</button>
+      <p class="label">Project details</p>
+      <h2 id="dialog-title"></h2>
+      <p id="dialog-description"></p>
+      <p class="tech" id="dialog-tech"></p>
+    </div>
+  </dialog>
+
+  <footer>
+    <div class="container">&copy; 2026 Sathvik Setti</div>
+  </footer>
+
+  <script>
+    const projectDialog = document.querySelector('#project-dialog');
+    const dialogTitle = document.querySelector('#dialog-title');
+    const dialogDescription = document.querySelector('#dialog-description');
+    const dialogTech = document.querySelector('#dialog-tech');
+
+    document.querySelectorAll('.read-more').forEach((button) => {
+      button.addEventListener('click', () => {
+        dialogTitle.textContent = button.dataset.projectTitle;
+        dialogDescription.textContent = button.dataset.projectDescription;
+        dialogTech.textContent = button.dataset.projectTech;
+        projectDialog.showModal();
+      });
+    });
+
+    document.querySelector('.dialog-close').addEventListener('click', () => {
+      projectDialog.close();
+    });
+
+    projectDialog.addEventListener('click', (event) => {
+      if (event.target === projectDialog) {
+        projectDialog.close();
+      }
+    });
+  </script>
+</body>
+</html>
